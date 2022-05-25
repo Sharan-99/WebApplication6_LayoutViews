@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@Page.Title</title>
+    @RenderSection("head", required: false)
+
+    <style type="text/css">
+        .link {
+            border:1px solid blue;
+            padding:2px 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to XYZ Services</h1>
+
+    @*<a href="/home/index" class="link">Index</a> | <a href="/home/aboutus" class="link">About Us</a> *@
+
+    @Html.ActionLink("Index Page", "Index", "Home", null, new { @class = "link" })
+    @Html.ActionLink("About Page", "AboutUs", "Home", null, new { @class = "link" })
+
+    @RenderBody()
+
+    <p>Copyright @DateTime.Now.Year</p>
+</body>
+</html>
